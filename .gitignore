@@ -1,0 +1,6 @@
+
+./src/obj
+assets/logs
+
+./src/bin/*
+./src/obj/*
