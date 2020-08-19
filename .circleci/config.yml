@@ -11,20 +11,20 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dotnet-packages-v1-{{ checksum "SimpleCalc/SimpleCalc.csproj" }}
+            - dotnet-packages-v1-{{ checksum "src/hello.restaurant.api.csproj" }}
       - run:
           name: "Install project dependencies"
           command: dotnet restore
       - save_cache:
           paths:
             - c:\users\circleci\.nuget\packages
-          key: dotnet-packages-v1-{{ checksum "SimpleCalc/SimpleCalc.csproj" }}
+          key: dotnet-packages-v1-{{ checksum "src/hello.restaurant.api.csproj" }}
       - run:
           name: "run application unit tests"
-          # command: dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
+          command: dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
           command: dotnet test
       - store_artifacts:
-          path: C:\Users\circleci\project\test_coverage
+          path: c:\users\circleci\project\test_coverage
   build:
     description: build application with Release configuration
     executor:
