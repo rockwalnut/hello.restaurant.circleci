@@ -19,12 +19,12 @@ jobs:
           paths:
             - c:\users\circleci\.nuget\packages
           key: dotnet-packages-v1-{{ checksum "src/hello.restaurant.api.csproj" }}
-      - run:
-          name: "run application unit tests"
+      #- run:
+          # name: "run application unit tests"
           # command: dotnet test -v n --results-directory:test_coverage --collect:"Code Coverage"
           # command: dotnet test
-      - store_artifacts:
-          path: c:\users\circleci\project\test_coverage
+      # - store_artifacts:
+          # path: c:\users\circleci\project\test_coverage
   build:
     description: build application with Release configuration
     executor:
