@@ -13,7 +13,7 @@ jobs:
           keys:
             - dotnet-packages-v1-{{ checksum "src/hello.restaurant.api.csproj" }}
       - run:
-          name: "Install project dependencies"
+          name: "install project dependencies"
           command: dotnet restore
       - save_cache:
           paths:
